@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-辅材定额列表</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+	jQuery.support.cors = true;
+
+</script>
+
+</head>
+
+<body style="background:#fff;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- <base href="http://www.wgc2013.com/" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+  function lxfEndtime(){
+          $(".lxftime").each(function(){
+                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+                var youtime = endtime-nowtime;//还有多久(毫秒值)
+                var seconds = youtime/1000;
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+                var CDay= days ;
+                var CHour= hours % 24;
+                var CMinute= minutes % 60;
+                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+                if(endtime<=nowtime){
+                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+                        }else{
+                                if($(this).attr("lxfday")=="no"){
+                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
+                                        }else{
+                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
+                                }
+                        }
+          });
+   setTimeout("lxfEndtime()",1000);
+  };
+$(function(){
+      lxfEndtime();
+   });
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+<div id="header" class="w-full">
+	<!--头部导航开始
+		<div id="site-nav" class="w-full" style="background:#333;border-bottom:1px solid #fff;text-align:left;">
+			<div style="overflow:hidden;color:#fff;text-align:left;width:77%;min-width:1100px;margin:0 auto;">http://www.wgc2013.com</div>
+		</div>-->
+		<div id="site-nav" class="w-full" style="background:#333;height:50px;">
+		  <div class="shoptop w clearfix" style="height:50px">
+				<div class="login_info" style="height:50px;line-height:50px">
+				
+					<a href="http://wgcapp.59jiaju.com/apk/index.html" target="_blank" style="color:#fff;font-size:18px;">
+						APP下载
+						<font style="margin-left:5px;">&or;</font>
+					</a>					
+				
+					
+				</div>
+				<ul class="quick-menu"style="min-width:190px;overflow:hidden;">
+				  
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<!--<a href="/index.php?app=member&amp;act=login&amp;ret_url=" style="color:#fff;font-size:18px;">企业服务</a>      -->  
+					</li>
+					<li class="service" style="margin-right:10px;height:50px;line-height:50px;background:none;">
+						<a href="javascript:;" style="color:#fff;font-size:18px;">|</a>        
+					</li>
+					<li style="background:red;margin-right:0px;padding:0 30px;height:50px;line-height:50px;">
+						 &nbsp;&nbsp;&nbsp;<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=member&amp;act=login&amp;ret_url=">登录</a><span style="color:#fff;margin:0 5px;">/</span>	<a  style="color:#fff;margin:0;font-size:18px;" href="/index.php?app=store&act=reg">注册</a>&nbsp;&nbsp;&nbsp;  
+					</li>
+				</ul>
+		   </div>
+		 </div>	
+	
+    <div class="shop-t w clearfix" style="width: 100%;min-width: 1100px;">
+	
+		
+		<div id="h_logos" style="overflow:hidden;" >
+		
+			<div class="logo" style="width:290px;float:left;text-align:left;">
+				 <a href="/"  title="微工程">
+					<img alt="微工程" src='data/files/mall/settings/logo.png' />
+				  </a>			  
+			</div>
+			<div id="searchbar" style="margin-top:0;width:630px;float:left;overflow:hidden">
+				<img style="height:80px;width:100%;" alt="微工程" src='themes/mall/jiaju/images/ppbypic.jpg' />				
+            </div>
+			
+						
+			
+			<div style="overflow:hidden;float:right;width:240px;height:100px;">
+				
+					 <a href="index.php?app=member&amp;act=login&amp;ret_url="  title="微工程"><img alt="微工程" src="data/files/mall/settings/user.png" style="width:100%;height:100%" /></a>  
+					
+				  
+			</div>
+			
+		</div>
+		
+   	</div>
+	
+	
+	
+	<div class="mainnav w-full">
+		<div class="menu">
+			<ul style="overflow:hidden;float:left;">
+				<li class="line"style="text-align:left;width:24%"><a style="font-size:22px;" href="/index.php">首页</a></li>
+				<li class="line"style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=zhaopin">热门招聘</a></li>
+				<li class="line"style="text-align:center;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=caigou">集采信息</a></li>
+				<li class="line"style="text-align:right;width:24%"><a style="font-size:22px;" href="/index.php?app=search&act=joblist2">劳动力资源</a></li>
+				<!--<li class="line"style="width:18%"><a style="font-size:22px;" href="/index.php?app=member&act=login&ret_url=">会员登录</a></li>
+				<li class="line"style="width:20%"><a style="font-size:22px;" href="/index.php?app=store&act=reg">会员注册</a></li>-->
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<!-- 中部主要内容 -->
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
+ <!-- 左上的导航栏 -->
+ 	<div class="container_nav" style="border: 2px solid #cacaca;width: 19%;height: 860px;float: left;">
+ 		<div class="user_center" style="text-align: left;">
+ 			<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">用户中心</h3>
+ 			<ul class="user_center_ul" style="margin-top: 10px;">
+ 				<li class="user_self_li">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-info.png" alt="个人资料" width="20px" height="20px" /></span>
+ 						个人资料
+ 					</div>
+ 				</li>
+ 				<li class="user_message_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/prmiary-tel.png" alt="消息" width="20px" height="20px" /></span>
+ 						消息
+ 					</div>
+ 				</li>
+ 				<li class="user_vip_li">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-money.png" alt="积分" width="20px" height="20px" /></span>
+ 						积分
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-safe.png" alt="认证" width="20px" height="20px" /></span>
+ 						认证
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_search.jpg" alt="工人定额" width="20px" height="20px" /></span>
+ 						工人定额
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_price.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						工人查询
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						工价询价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/zhucai.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						主材定价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li bg_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/fucai.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						辅材定价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/yusuan.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						预算报价
+ 					</div>
+ 				</li>
+ 			</ul>
+ 		</div>
+
+ 		<!-- 管理工具 -->
+ 		<div class="show_tool" style="text-align: left;margin-bottom: 100px;">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">管理工具</h3>
+ 			<ul>
+ 				<li class="user_weixiu_li" style="text-align: center;height: 30px;line-height: 30px;">维修项目</li>
+ 				<li class="user_project_li" style="text-align: center;height: 30px;line-height: 30px;">项目管理</li>
+ 				
+ 			</ul>
+ 		</div>
+ 		
+ 		<!-- 发布中心 -->
+ 		<div class="show_center" style="text-align: left;">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">发布中心</h3>
+ 			<ul>
+ 				<li class="user_employ_li" style="text-align: center;height: 30px;line-height: 30px;">发布招聘</li>
+ 				<li class="user_collection_li" style="text-align: center;height: 30px;line-height: 30px;">发布集采</li>
+ 				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;">发布列表</li>
+ 			</ul>
+ 		</div>
+ 		<!-- 简历中心 -->
+ 		<div class="cart_center">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;text-align: left;">简历中心</h3>
+ 			<li class="user_resume_li" style="text-align: center;height: 30px;line-height: 30px;">
+ 				简历1
+ 			</li>
+ 		</div>
+ 	</div>
+
+
+ 	<!-- 右边的内容 -->
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+
+		<!-- 预算报价 -->
+		<div class="worker_make base_ui_public" style="position: relative;">
+			<ul class="worker_make_ul user_public_ul">
+ 				<li class="change_bg_li" style="margin-right: 10px;">工人定额表</li>
+ 			</ul>
+ 			<div class="worker_make_info base_info_public" style="overflow: hidden;padding-left: 15%;min-height: 250px;">
+ 			<!--工人定额列表 -->
+			<div class="worker_make_list" style="position: relative;left: -16%;width: 115%;">
+				<div style="overflow: hidden;margin-top: 10px;">
+					<div style="position: relative;">
+						<div style="overflow: hidden;margin-top: 10px;">
+						<input type="text" style="width: 265px;height: 30px;float: left;border: 1px solid #808080;border-radius: 0;" />
+
+						<div style="float: left;">
+						<a href="#" style="display: inline-block;width: 75px;height: 30px;line-height: 30px;font-size: 16px;color: #f3552d;border: 1px solid #808080; background-color: #facd89;">搜索</a>
+						<a class="share_dinge" href="javascript:;" style="display: inline-block;width: 60px;height: 30px;line-height: 30px;font-size: 16px;color: #2d2a2a;font-weight: bold;letter-spacing: 4px; background-color: #facd89;border-radius: 5px;position: relative;left: 385px;text-decoration: none;">确定</a>
+						</div>
+			</div>
+			<div class="price_list" style="position: relative;width: 100%;">
+				<div class="price_list_name" style="text-align: left;width: 100%;">
+					<span>序号</span>
+					<span>材料名称</span>
+					<span>品牌</span>
+					<span>规格型号</span>
+					<span>单位</span>
+					<span>单价</span>
+					<span>含税价</span>
+					<span>配送时间</span>
+					<span>供应商</span>
+					<span>联系人</span>
+					<span>联系方式</span>
+					<span>网址</span>
+					<span>邮箱</span>
+					<span>微信号</span>
+					<span>备注</span>
+					<span>图片</span>
+				</div>
+				<div class="price_list_detail" style="text-align: left;width: 100%;">
+					<span><input type="checkbox" style="display: inline-block;" />&nbsp;&nbsp;1</span>
+					<span>• 空调盘机</span>
+					<span>格力</span>
+					<span>BN-12</span>
+					<span>台</span>
+					<span>4200</span>
+					<span>4872</span>
+					<span>3天</span>
+					<span>广东格力空调有限公司</span>
+					<span>王某</span>
+					<span>188xxxxxxxx</span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- 分页 -->
+				<div class="price_page">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				<a href="#" style="width: 15px;">1</a>
+				<a href="#" style="width: 15px;">2</a>
+				<a href="#" style="width: 15px;">3</a>
+				<a href="#" style="width: 15px;">4</a>
+				<a href="#" style="width: 15px;">5</a>
+				<a href="#" style="width: 15px;">6</a>
+				<a href="#" style="width: 15px;">7</a>
+				<a href="#">...</a>
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+				</div>
+			</div>
+			</div>
+				</div>
+			</div>
+			<!-- 预算报价内容 -->
+ 			</div>
+ 			
+			
+		</div>
+		
+		
+ 		</div>
+ 		
+ 	</div>
+
+
+
+
+
+<div  style="width:100%;height:230PX;margin:0 auto;overflow:hidden;background:#2d3236;">
+	<div id="footer" class="center auto mt10 w-full" style="width:1200px;position:relative;background:#2d3236;">
+		
+		 <div class="links" border="0" align="center" style="float:left;border:none;background:#2d3236;">
+			<strong style="color:#fff;font-size:16px;;">友情链接：</strong>
+			<a style="color:#fff;font-size:16px;" href="http://www.jyboo.com/">经艺装饰</a></td>
+			<a style="color:#fff;font-size:16px;" href="/gs/index.php?m=content&c=index&a=show&catid=13&id=2">喜多装饰</a>
+			<a style="color:#fff;font-size:16px;" href="/gs/index.php?m=content&c=index&a=show&catid=13&id=9">超凡装饰</a>
+				
+		</div>
+		<img alt="59家居商城" src='city/images/code.png' style="position:absolute;top:10px;right:20px;width:150px;height:150px;"/>
+		<div class="foot-nav w-full auto" style="border:1px solid #333;float:left;height:80px;;line-height:80px;overflow:hidden;">
+			<p style="background:#2d3236;">
+				<a style="color:#fff;font-size:16px;;font-size:16px;" href="index.php?app=article&act=view&article_id=28" target="_blank">关于本站</a>
+				<a style="color:#fff;font-size:16px;;font-size:16px;" href="index.php?app=search&act=zhaopin" target="_blank">专业招聘</a>
+				<a style="color:#fff;font-size:16px;;font-size:16px;" href="index.php?app=article&act=view&article_id=28">联系我们</a>
+				
+			</p>
+		</div>
+		
+		
+		<div class="foot-group" style="background:#2d3236;width:100%;border:1px solid #333;float:left;height:70px;;line-height:70px;overflow:hidden;">
+			<a style="color:#fff;font-size:16px;;font-size:16px;" href="http://www.jd.com" target="_blank">京东商城</a> | 
+			<a style="color:#fff;font-size:16px;" href="www.yihaodian.com" target="_blank">一号店</a> |
+			<a style="color:#fff;font-size:16px;" href="http://www.hao123.com/" target="_blank">好123导航</a> |
+			<a style="color:#fff;font-size:16px;" href="http://www.jyboo.com/" target="_blank">经艺装饰</a> |
+			<a style="color:#fff;font-size:16px;" href="http://www.taobao.com/" target="_blank">淘宝商城</a> |
+			<a style="color:#fff;font-size:16px;" href="http://www.tmall.com/" target="_blank">天猫商城</a> |
+			<a style="color:#fff;font-size:16px;" href="http://china.alibaba.com/" target="_blank">阿里巴巴</a> |
+			<a style="color:#fff;font-size:16px;" href="/gs/index.php?m=content&c=index&a=show&catid=13&id=2" target="_blank">喜多装饰</a> |
+			<a style="color:#fff;font-size:16px;" href="/gs/index.php?m=content&c=index&a=show&catid=13&id=9" target="_blank">超凡装饰</a> |
+			<a style="color:#fff;font-size:16px;" href="http://www.dangdang.com/" target="_blank">当当网</a>   
+		</div>
+	</div>
+</div>
+
+
+<div  style="width:100%;height:50PX;line-height:50px;margin:0 auto;overflow:hidden;background:#23282c;">
+	<div style="color:#fff;font-size:16px;"class="copyright">Copyright &copy; 2013-2018 微工程 版权所有
+    <a style="color:#fff;font-size:16px;"href="http://www.miitbeian.gov.cn">粤ICP备09031901号</a>
+
+   广州市我购科技有限公司<!--<a href='http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440115115022013051700026'><img alt='' src='http://netadreg.gzaic.gov.cn/ntmm/default/images/logo_down.jpg' style='width:37px;height: 38px' /></a>-->
+   </div>
+
+</div>
+<script type="text/javascript">
+	$(".share_show").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"300px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+
+	})
+	$(".price_fucai_info").click(function(){
+		
+			$(".share_form").hide();
+			$(".price_fucai_info").css("background-color","#fff");
+			$(".price_fucai_info input").css("background-color","#fff");
+		})
+
+	//点击辅材列表
+	$(".price_fucai_ul li:last").click(function(){
+		$(".price_fucai_ul li:first").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").hide();
+		$(".price_money").show();
+
+	})
+	$(".price_fucai_ul li:first").click(function(){
+		$(".price_fucai_ul li:last").removeClass("change_bg_li")
+		$(this).addClass("change_bg_li")
+		$(".price_info").show();
+		$(".price_money").hide();
+	})
+
+	$(".share_dinge").click(function(e){
+		e.stopPropagation(); 
+		$(".share_form").show();
+		$(".share_form").css({"top":"50px"});
+		$(".price_fucai_info").css("background-color","#eee");
+		$(".price_fucai_info input").css("background-color","#eee");
+	})
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* ?°≠??°≠°¿??°§??? */
+Ôªø/* ?‚Ä¶??‚Ä¶¬±??¬∑??? */
 @charset "utf-8";body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,table,th,td,p,blockquote,pre,form,fieldset,legend,hr,img{margin:0;padding:0;border:0}
 em,i,cite{font-style:normal}
 body{background:#fff;font-size:12px;font-family:simsun;color:#666}
@@ -27,7 +27,7 @@ a:focus, *:focus {
 .reg ul li p{text-align:center;}
 #goodslist{text-align:left;}
 .ware_text{text-align:left;}
-/*qq??°È?????°™®®?°ß*/
+/*qq??Ôø†?????‚Äî√®?¬®*/
 .kefu_QQ{
 	position:absolute;
 	width:100px;
@@ -45,39 +45,39 @@ a:focus, *:focus {
 	display: block;
 }
 /* select */
-.fixed-top /* ?°Ë°‰®¶?°ß??o??? */{
+.fixed-top /* ?¬§‚Ä≤√©?¬®??o??? */{
 	position:fixed;bottom:auto;top:200px;
 }
 
-.fixed-bottom /* ?o?®¶?°ß??o??? */{
+.fixed-bottom /* ?o?√©?¬®??o??? */{
 	position:fixed;bottom:0px;top:auto;
 }
 
-.fixed-left /* ?°§|??°Ï??o??? */{
+.fixed-left /* ?¬∑|??¬ß??o??? */{
 	position:fixed;right:auto;left:0px; z-index:1000;
 }
 
-.fixed-right /* ??3??°Ï??o??? */{
+.fixed-right /* ??3??¬ß??o??? */{
 	position:fixed;right:0px;left:auto;
 }
-/* ???®¶?°È?????°•®¶?°Ë?o?IE6???????¶Ã??¶Ã?®®°Ï???°ß®¶Ä??°±°ß????®C1?3? */
+/* ???√©?Ôø†?????Àâ√©?¬§?o?IE6???????Œº??Œº?√®¬ß???¬®√©‚Ç¨??‚Äù¬®????‚Äì1?3? */
 
-* html,* html body /* ????-°ÍIE6??°•??°ßbug */{
+* html,* html body /* ????-Ôø°IE6??Àâ??¬®bug */{
 	background-image:url(about:blank);background-attachment:fixed;
 }
 
-* html .fixed-top /* IE6 ?°Ë°‰®¶?°ß??o??? */{
+* html .fixed-top /* IE6 ?¬§‚Ä≤√©?¬®??o??? */{
 	position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+200);
 }
 
-* html .fixed-right /* IE6 ??3??°Ï??o??? */ {
+* html .fixed-right /* IE6 ??3??¬ß??o??? */ {
 	position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));
 }
-* html .fixed-bottom /* IE6 ?o?®¶?°ß??o???  */{
+* html .fixed-bottom /* IE6 ?o?√©?¬®??o???  */{
 	position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
 }
 
-* html .fixed-left /* IE6 ?°§|??°Ï??o??? */{
+* html .fixed-left /* IE6 ?¬∑|??¬ß??o??? */{
 	position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));
 }
 
@@ -89,14 +89,14 @@ a:focus, *:focus {
 #site-nav .login_info{width: 45%;min-width:450px;float:left; font-family:Arial;text-align: left;}
 #site-nav .quick-menu { min-width:300px;float:right; font-family:Arial;text-align: right;}
 
-/*logo®¶?°ß???*/
+/*logo√©?¬®???*/
 .w{width: 100%;min-width:1100px; margin:0 auto;height:100px;}
 #header #h_logos{ position: relative;width: 1200px;margin:20px auto 0 auto;overflow:hidden;height:100px;}
 
 #header .logo{float:left;margin-left:0px;width: 30%;}
 #header .logo a{display: block;height:100px;width: 285px;float: left;overflow:hidden;}
 #header .logo a imgl{display: block;width: 100%;height:72px;float: left;}
-/*????°‰°È?????o???*/
+/*????‚Ä≤Ôø†?????o???*/
 #header  #searchbar, #fabu {
 	height: 100px;
 	overflow: hidden;
@@ -172,11 +172,11 @@ min-width: 15%;
 
 }
 
-/**???®®??®®°•|???®¶?¶Ã*/
+/**???√®??√®Àâ|???√©?Œº*/
 .zhaopin_con2,.ylcon .tit,p,#actions{text-align:left;}
 .zhaopin_text{height: 36px;}
 
-/*?o°±®¶?°Æ?o°™®®°•|???*/
+/*?o‚Äù√©?‚Äò?o‚Äî√®Àâ|???*/
 
 .titles{height:30px;line-height:30px;}
 .uls{text-align:left;padding:0 10px;}
@@ -187,7 +187,7 @@ min-width: 15%;
 
 ..index-tit,.more-article{text-align:left;}
 
-/*?°Ë???????®¶Ä°Î???*/
+/*?¬§???????√©‚Ç¨‚Ä∞???*/
 /* select */
 .select{padding:0;border-radius:4px;width:100%;margin:0 auto;font-size:12px}
 .select li{list-style:none;padding:10px 0 5px 100px}
@@ -204,7 +204,7 @@ min-width: 15%;
 .select .select-result a{padding-right:20px;background:#f60 url("close.gif") right 9px no-repeat}
 .select .select-result a:hover{background-position:right -15px}
 
-/*?o?®¶?°ß?????°≠®¶°∞???£§*/
+/*?o?√©?¬®?????‚Ä¶√©‚Äú???Ôø•*/
 .links{
 	width:100%;
 	height:auto;
