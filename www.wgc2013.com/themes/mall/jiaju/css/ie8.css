@@ -1,3 +1,6 @@
+.user_center_ul li span{
+	width: 20px;
+}
 input[type="radio"]{
 	
 	border: none !important;

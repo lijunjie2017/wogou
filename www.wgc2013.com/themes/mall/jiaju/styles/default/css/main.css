@@ -1514,6 +1514,18 @@ tr span{
 	color: #3d3d3d;
 	border-left: 2px solid #979898;
 	border-bottom: 2px solid #979898;
+	min-height: 180px;
+}
+.tcontent textarea{
+	border: none;
+}
+.gongchen_total span{
+	display: inline-block;
+	height: 100%;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	border-left: 2px solid #979898;
 }
 .total{
 	margin: 20px 0;
@@ -1584,3 +1596,4 @@ tr span{
 	width: 70px;
 	color: #979898;
 }
+
