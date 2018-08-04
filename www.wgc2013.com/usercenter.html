@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>用户中心-预算报价</title>
+<meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
+<meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+	jQuery.support.cors = true;
+
+</script>
+
+</head>
+
+<body style="background:#fff;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- <base href="http://www.wgc2013.com/" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" href="themes/mall/jiaju/styles/default/css/main.css" rel="stylesheet"  />
+<link type="text/css" href="themes/mall/jiaju/styles/css/global.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/catalog.css" rel="stylesheet"  />
+<link type="text/css" href="http://www.wgc2013.com/themes/mall/jiaju/styles/default/css/footer.css" rel="stylesheet" />
+<link type="text/css" href="themes/mall/jiaju/styles/css/style.css" rel="stylesheet"  />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link type="text/css" href="themes/mall/jiaju/css/ie8.css" rel="stylesheet"  />
+<![endif]-->
+<script type="text/javascript">
+var SITE_URL = "http://www.wgc2013.com";
+var PRICE_FORMAT = '&yen;%s';
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script><style type="text/css">
+body{background:url('') no-repeat center top }
+.mainnav{width:990px; overflow:hidden; margin:0 auto}
+.STYLE1 {color: red}
+</style>
+<script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
+<script>
+</script>
+<script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
+<script type="text/javascript">
+  $(function (){
+    $('#open-change-city-window').click(function (){
+      $('.change-city-window').slideDown();
+      
+    })
+    $('#close-change-city-window').click(function (){
+      $('.change-city-window').slideUp();
+    })
+
+  
+  })
+</script>
+</head>
+<body>
+
+ <!-- 左上的导航栏 -->
+ 	<div class="container_nav" style="border: 2px solid #cacaca;width: 100%;height: 860px;float: left;">
+ 		<div class="user_center" style="text-align: left;">
+ 			<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">企业用户中心</h3>
+ 			<ul class="user_center_ul" style="margin-top: 10px;">
+ 				<li class="user_self_li">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-info.png" alt="个人资料" width="20px" height="20px" /></span>
+ 						公司信息
+ 					</div>
+ 				</li>
+ 				<li class="user_tel_li">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/tel.jpg" alt="个人资料" width="20px" height="20px" /></span>
+ 						通讯录
+ 					</div>
+ 				</li>
+ 				<li class="user_message_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/prmiary-tel.png" alt="消息" width="20px" height="20px" /></span>
+ 						消息
+ 					</div>
+ 				</li>
+ 				<li class="user_vip_li">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-money.png" alt="积分" width="20px" height="20px" /></span>
+ 						积分
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-safe.png" alt="认证" width="20px" height="20px" /></span>
+ 						认证
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_search.jpg" alt="工人定额" width="20px" height="20px" /></span>
+ 						工人定额
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_price.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						工人查询
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						工价询价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/zhucai.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						主材定价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/fucai.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						辅材定价
+ 					</div>
+ 				</li>
+ 				<li class="user_resure_li bg_li" style="margin: 10px 0;">
+ 					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
+ 						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/yusuan.jpg" alt="认证" width="20px" height="20px" /></span>
+ 						预算报价
+ 					</div>
+ 				</li>
+ 			</ul>
+ 		</div>
+
+ 		<!-- 管理工具 -->
+ 		<div class="show_tool" style="text-align: left;margin-bottom: 100px;">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">管理工具</h3>
+ 			<ul>
+ 				<li class="user_weixiu_li" style="text-align: center;height: 30px;line-height: 30px;">维修项目</li>
+ 				<li class="user_project_li" style="text-align: center;height: 30px;line-height: 30px;">项目管理</li>
+ 				
+ 			</ul>
+ 		</div>
+ 		
+ 		<!-- 发布中心 -->
+ 		<div class="show_center" style="text-align: left;">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">发布中心</h3>
+ 			<ul>
+ 				<li class="user_employ_li" style="text-align: center;height: 30px;line-height: 30px;">发布招聘</li>
+ 				<li class="user_collection_li" style="text-align: center;height: 30px;line-height: 30px;">发布集采</li>
+ 				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;">发布列表</li>
+ 			</ul>
+ 		</div>
+ 		<!-- 简历中心 -->
+ 		<div class="cart_center">
+ 		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;text-align: left;">简历中心</h3>
+ 		<ul>
+ 			<li class="user_resume_li" style="text-align: center;height: 30px;line-height: 30px;">
+ 				简历1
+ 			</li>
+ 		</ul>
+ 		</div>
+ 	</div>
+
+
+ 	<!-- 右边的内容 -->
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(".container_nav ul li").click(function(){
+	$(".container_nav ul li").removeClass("bg_li")
+	$(this).addClass("bg_li")
+})
+</script>
+</body>
+</html>
