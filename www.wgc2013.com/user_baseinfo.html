@@ -4,21 +4,16 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-预算报价</title>
+<title>用户中心-微工程</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
-
-<!-- 引入个人中心 -->
-<link type="text/css" href="css/worker_search.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/indentification.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
-
 </script>
 
 </head>
@@ -40,9 +35,6 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
-<!-- 引入的是个人中心的 -->
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/worker_quota.js"></script>
 
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
@@ -61,50 +53,8 @@ body{background:url('') no-repeat center top }
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
 <script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
 </script>
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
-<script type="text/javascript">
-  $(function (){
-    $('#open-change-city-window').click(function (){
-      $('.change-city-window').slideDown();
-      
-    })
-    $('#close-change-city-window').click(function (){
-      $('.change-city-window').slideUp();
-    })
-
-  
-  })
-</script>
 </head>
 <body>
 <div id="header" class="w-full">
@@ -183,77 +133,201 @@ $(function(){
 </div>
 
 <!-- 中部主要内容 -->
- <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
  <!-- 左上的导航栏 -->
- 	<iframe src="usercenter.html" frameborder="0" width="19.5%" height="860px;" style="float: left;"></iframe>
-<!-- 	<include file="usercenter.html"/> -->
+
+	<iframe src="companycenter.html" frameborder="0" width="19.5%" height="950px;" style="float: left;"></iframe>
 
  	<!-- 右边的内容 -->
- 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
-
-		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
-			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">企业认证</li>
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 		<div class="base_ui user_ui_public" style="/*display: none*/;">
+ 			<ul class="base_ui_ul">
+ 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">基本信息</li>
+ 				<li>修改密码</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
- 			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
-			<div style="overflow: hidden;margin-top: 10px;">
-			<!-- 基本信息 -->
-			<div class="section" style="border: none;">
-			<div class="ident">
-				<ul>
-					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司名称</span><span class="colon">:</span><input type="text" placeholder="请填写公司全称" />
-					</li>
-					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司法人</span><span class="colon">:</span><input type="text" placeholder="请填写公司法人" />
-					</li>
-				</ul>
+ 			<!-- 基本信息 -->
+ 			<div class="base_info" style="overflow: hidden;">
+ 				<!-- 信息里边的内容 -->
+ 				<div class="user_photo" style="width: 20%;height: 100%;float: left;margin-top: 30px;">
+ 					<img src="data/files/mall/template/user-head.png" alt="用户头像" width="75" height="75" style="position: relative;top: 15px;left: 75px;" />
+ 					<div><button class="user_photo_button" style="background-image: url('data/files/mall/template/user_button.jpg');background-size: 80px 25px;">更改头像</button></div>
+ 				</div>
+ 				<div class="user_input" style="width: 80%;height: 100%;float: right;margin-top: 30px;">
+ 					<div style="overflow: hidden;">
+ 						<ul  style="float: left;">
+ 							<li>
+ 								<div class="user_info_name">
+ 									姓名：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
 
-				<div class="pic_box" style="margin-left: -28px;">
-					<span class="input_type" style="float: left;color: #000;font-weight: bold;">公司营业执照</span><span class="colon" style="float: left;">:</span>
-					<div style="display: inline-block;width: 260px;height:170px;border:1px solid #c1c1be;position: relative;left: -86px;">
-						<input type="file" id="doc" name="pic" style="display: none;">
-						<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;margin: 10px;">
-							<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
-							<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
-						
-							<div style="width:260px;height:170px;position: absolute;top: -10px;left: -10px;" id="localImag">
-						        <img src="" id="preview" alt="">
-							</div>
-						</label>
-					</div>
-				</div>
+ 							<li>
+ 								<div class="user_info_name">
+ 									性别：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="radio" id="male" checked="checked" name="Sex" value="male" style="height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<label for="male" class="male"><img class="boy" src="data/files/mall/template/bg_radio_full.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;男</label>
+ 									<input type="radio" id="female" name="Sex" value="female" style="height: 30px;line-height: 30px;font-size: 14px;" />
+ 									<label for="female"><img class="girl" src="data/files/mall/template/bg_radio_empty.jpg" alt="" width="15" height="15" />&nbsp;&nbsp;&nbsp;女</label>
+ 								</div>
+ 							</li>
 
-				<ul class="tip_list" style="position: relative;left: -33px;list-style: decimal;">
-					<li><b>1.营业执照名称与公司名称保持一致</b></li>
-					<li><b>2.营业执照需要加盖公司红章</b></li>
-					<li><b>3.营业执照要清晰可见</b></li>
-					<li class="spic" style="margin-left: 0;">
-						<span style="float: left;margin-right: 8px;">*</span>
-						<input type="checkbox" style="float: left;margin-right: 2px;" />
-						<b>提交后是否愿意公开自己的资料信息在微工程网站上，来进行找活/招聘/发布集采。</b>
-					</li>
-				</ul>
+ 							<li>
+ 								<div class="user_info_name">
+ 									年龄：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
 
-				<input type="button" value="确认提交" class="sub_btn" />
-			</div>
-		</div>
+ 							<li>
+ 								<div class="user_info_name">
+ 									户籍：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工种：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工龄：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									技能：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+
+ 							<li>
+ 								<div class="user_info_name">
+ 									工作经验：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+ 							
+ 						</ul>
+
+ 						<ul>
+ 							<li>
+ 								<div class="user_info_name">
+ 									手机号：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									微信号：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									邮箱：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
+ 							<li>
+ 								<div class="user_info_name">
+ 									现居住地：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<input type="text" style="height: 30px;font-size: 14px;" />
+ 								</div>
+ 							</li>
 
 
-			</div>
-			</div>
-	
+
+
+ 						</ul>
+ 						
+ 					</div>
+ 					<div>
+ 					<ul>
+ 						<li>
+ 								<div class="user_info_name" style="width: 100px;">
+ 									以往案例介绍：
+ 								</div>
+ 								<div class="user_info_input">
+ 									<textarea style="height: 85px;width: 370px; line-height: 20px;font-size: 14px;padding-left: 15px;" ></textarea>
+ 									
+ 								</div>
+ 							</li>
+ 					</ul>
+ 					<div class="user_button">提交修改</div>
+ 					</div>
+ 				</div>
  			</div>
- 			
-			
-		</div>
-		
-		
+ 			<!-- 修改密码 -->
+ 			<div class="base_info_paw">
+ 				<div>
+ 					<ul>
+ 						<li>
+ 							<div class="user_info_name">您的密码:</div>
+ 							<div class="user_info_input"><input type="text" style="height: 30px;line-height: 30px;font-size: 14px;" /></div>
+ 						</li>
+ 						<li>
+ 							<div class="user_info_name">新&nbsp;密&nbsp;码:</div>
+ 							<div class="user_info_input"><input type="text" style="height: 30px;line-height: 30px;font-size: 14px;" /></div>
+ 						</li>
+ 						<li>
+ 							<div class="user_info_name">确认密码:</div>
+ 							<div class="user_info_input"><input type="text" style="height: 30px;line-height: 30px;font-size: 14px;" /></div>
+ 						</li>
+
+ 					</ul>
+ 					<div class="base_info_paw_submit">
+ 						<button>提交</button>
+ 					</div>
+ 				</div>
+ 			</div>
  		</div>
 
+ 		<!-- 消息中心 -->
+
+		<!-- 积分 -->
+
+		<!-- 发布招聘 -->
+
+		<!-- 发布集采 -->
+
+		<!-- 发布列表 -->
+
+ 		<!-- 创建简历 -->
+
+ 		<!-- 实名认证 -->
+
+ 		</div>
  		
  	</div>
 
@@ -307,43 +381,96 @@ $(function(){
 
 </div>
 <script type="text/javascript">
-	// 图片上传
-	$("input[name='pic']").live('change',function(){
-        var file = $(this).val();
-        setImagePreview(file);
-    });
+	  // 点击用户中心的li标签改变样式
+$(".container_nav ul li").click(function(){
+	$(".container_nav ul li").removeClass("bg_li")
+	$(this).addClass("bg_li")
+})
+
+    //点击发布中心的li
+
+    //简历中心
+
+    //点击个人资料
+
+    // 点击修改密码后呈现页面
+
+    $(".base_ui_ul li:first").click(function(){
+    	 $(".base_ui_ul li:last").css({
+    	 	"background-color": "#fff",
+    		"color": "#525455"
+    	 })
+    	$(this).css({
+    		"background-color": "#f8c67b",
+    		"color": "#f34c26"
+    	})
+    	$(".base_info").show();
+    	$(".base_info_paw").hide()
+    })
+    $(".base_ui_ul li:last").click(function(){
+    	 $(".base_ui_ul li:first").css({
+    	 	"background-color": "#fff",
+    		"color": "#525455"
+    	 })
+    	$(this).css({
+    		"background-color": "#f8c67b",
+    		"color": "#f34c26"
+    	})
+    	$(".base_info").hide();
+    	$(".base_info_paw").show()
+    })
 
 
-	function setImagePreview(avalue) {
-	    var docObj = document.getElementById("doc");//img
-	    var imgObjPreview = document.getElementById("preview"); //div
-	    var divs = document.getElementById("localImag");
-	    if (docObj.files && docObj.files[0]) {
-	       //火狐下，直接设img属性
-	       imgObjPreview.style.display = 'block';
-	       imgObjPreview.style.width = '260px';
-	       imgObjPreview.style.height = '170px';
-	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
-	    } else {
-	       //IE下，使用滤镜
-	       docObj.select();
-	       var imgSrc = document.selection.createRange().text;
-	       var localImagId = document.getElementById("localImag");
-	       localImagId.style.width = "260px";
-	       localImagId.style.height = "170px";
-	       //图片异常的捕捉，防止用户修改后缀来伪造图片
-	       try {
-	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
-	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
-	        } catch(e) {
-	            alert("您上传的图片格式不正确，请重新选择!");
-	            return false;
-	        }
-	        imgObjPreview.style.display = 'none';
-	        document.selection.empty();
-	    }
-	   return true;
-	}
+    //点击消息
+
+    //消息栏中的消息切换
+
+    //点击积分
+
+    //发布招聘
+
+    //发布集采
+
+    //发布列表
+
+    //点击简历创建个人简历
+
+    //点击性别改变样式
+    $(".girl").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".boy")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+    $(".boy").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".girl")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+    $(".resume_girl").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".resume_boy")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+    $(".resume_boy").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".resume_girl")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+    $(".resume_marry").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".resume_demarry")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+    $(".resume_demarry").click(function(){
+    	// console.log()
+    	$(this)[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_full.jpg";
+    	$(".resume_marry")[0].src = "C:/Users/Administrator/Desktop/user/www.wgc2013.com/data/files/mall/template/bg_radio_empty.jpg";
+    })
+
+
+
+
+
 </script>
 </body>
 </html>

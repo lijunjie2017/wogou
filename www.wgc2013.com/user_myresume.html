@@ -4,16 +4,12 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-预算报价</title>
+<title>用户中心-查阅简历</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
-
-<!-- 引入个人中心 -->
-<link type="text/css" href="css/worker_search.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/indentification.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
@@ -40,9 +36,6 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
-<!-- 引入的是个人中心的 -->
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/worker_quota.js"></script>
 
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
@@ -60,37 +53,7 @@ body{background:url('') no-repeat center top }
 .STYLE1 {color: red}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
+
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
 <script type="text/javascript">
   $(function (){
@@ -183,69 +146,63 @@ $(function(){
 </div>
 
 <!-- 中部主要内容 -->
- <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
  <!-- 左上的导航栏 -->
- 	<iframe src="usercenter.html" frameborder="0" width="19.5%" height="860px;" style="float: left;"></iframe>
-<!-- 	<include file="usercenter.html"/> -->
+<iframe src="companycenter.html" frameborder="0" width="19.5%" height="950px;" style="float: left;"></iframe>
+
 
  	<!-- 右边的内容 -->
- 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
 
-		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
-			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">企业认证</li>
- 			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
- 			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
-			<div style="overflow: hidden;margin-top: 10px;">
-			<!-- 基本信息 -->
-			<div class="section" style="border: none;">
-			<div class="ident">
-				<ul>
-					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司名称</span><span class="colon">:</span><input type="text" placeholder="请填写公司全称" />
-					</li>
-					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司法人</span><span class="colon">:</span><input type="text" placeholder="请填写公司法人" />
-					</li>
-				</ul>
+		<!-- 预算报价 -->
+		<div class="worker_make base_ui_public" style="position: relative;">
 
-				<div class="pic_box" style="margin-left: -28px;">
-					<span class="input_type" style="float: left;color: #000;font-weight: bold;">公司营业执照</span><span class="colon" style="float: left;">:</span>
-					<div style="display: inline-block;width: 260px;height:170px;border:1px solid #c1c1be;position: relative;left: -86px;">
-						<input type="file" id="doc" name="pic" style="display: none;">
-						<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;margin: 10px;">
-							<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
-							<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
-						
-							<div style="width:260px;height:170px;position: absolute;top: -10px;left: -10px;" id="localImag">
-						        <img src="" id="preview" alt="">
-							</div>
-						</label>
+ 			<div class="worker_make_info base_info_public" style="overflow: hidden;min-height: 250px;margin-top: 10px;padding-top: 0;position: relative;">
+ 				<div style="width: 100%;">
+ 					<img src="data/files/mall/template/resume_bg1.jpg" alt="" width="100%" height="55px;" />
+ 				</div>
+				<!-- 简历详情 -->
+				<div class="resume_content">
+					<div class="resume_left" style="width: 30%;height: 60%;border-right: 2px solid #eee; float: left;margin-top: 100px;">
+						<div style="margin-left: 30%;position: relative;top: -40px;">
+							<a href="#"><img src="data/files/mall/template/user-head.png" alt="用户头像" width="120" height="120" /></a>
+						</div>
+						<!-- 编写简历信息 -->
+						<div style="margin: -20px 0px 50% 15%;">
+							<ul>
+								<li><h1 style="font-size: 18px;font-weight: bold;letter-spacing: 2px;margin-bottom: 10px;">赵生</h1></li>
+								<li style="margin-bottom: 20px;"><span style="width: 40px;color: #000;">男</span><span style="display: inline-block; width: 150px;">23岁(1995-2-15)</span><span style="width: 40px;color: #000;">未婚</span></li>
+								<li><span>贯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</span><span>广州</span></li>
+								<li><span>居&nbsp;住&nbsp;&nbsp;地：</span><span>广州市白云区五社工业区</span></li>
+								<li><span>手&nbsp;机&nbsp;&nbsp;号：</span><span>18385666671</span></li>
+								<li><span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span><span>1115554545@qq.com</span></li>
+								<li><h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;">教育经历</h3></li>
+								<li><span>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>计算机应用</span></li>
+								<li><span>学院名称：</span><span>广州工业大学学院</span></li>
+								<li><span>学历学位：</span><span>大专</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="resume_right" style="width: 70%;float: left;margin-top: 140px;padding-right: 5%;">
+						<div style="margin-left: 5%;">
+						<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">个人工作经验</h3>
+						<p style="text-align: left;color: #000;font-size: 12px;letter-spacing: 2px;"><b>2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测。2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.2017-3~2017-12 在某某科技公司做软件开发，在职期间担任软件测试员，负责测试所开发软件的功能检测.</b></p>
+						<h3 style="font-size: 15px;color: #fc9b84;margin: 10px 0;font-weight: bold;text-align: left;margin: 20px 0;">求职意向</h3>
+						<ul>
+							<li><span>期望资薪：</span><span>5000-6000</span></li>
+							<li><span>工作地点：</span><span>广州白云区</span></li>
+							<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能：</span><span>软件数据编程</span></li>
+							<li><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</span><span>软件工程师</span></li>
+							<li><span>行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</span><span>计算机、互联网</span></li>
+							<li><span>个人标签：</span><span>冷静处理任何事</span></li>
+							<li><span>自我评价：</span><span>个人心思细致，能够快速的熟悉新的工作环境</span></li>
+						</ul>
+						</div>
 					</div>
 				</div>
-
-				<ul class="tip_list" style="position: relative;left: -33px;list-style: decimal;">
-					<li><b>1.营业执照名称与公司名称保持一致</b></li>
-					<li><b>2.营业执照需要加盖公司红章</b></li>
-					<li><b>3.营业执照要清晰可见</b></li>
-					<li class="spic" style="margin-left: 0;">
-						<span style="float: left;margin-right: 8px;">*</span>
-						<input type="checkbox" style="float: left;margin-right: 2px;" />
-						<b>提交后是否愿意公开自己的资料信息在微工程网站上，来进行找活/招聘/发布集采。</b>
-					</li>
-				</ul>
-
-				<input type="button" value="确认提交" class="sub_btn" />
-			</div>
-		</div>
-
-
-			</div>
-			</div>
-	
+ 				<div style="width: 100%;position: absolute;bottom: 0;">
+ 					<img src="data/files/mall/template/resume_bg2.jpg" alt="" width="100%" height="55px;" />
+ 				</div>
  			</div>
  			
 			
@@ -253,7 +210,6 @@ $(function(){
 		
 		
  		</div>
-
  		
  	</div>
 
@@ -307,43 +263,7 @@ $(function(){
 
 </div>
 <script type="text/javascript">
-	// 图片上传
-	$("input[name='pic']").live('change',function(){
-        var file = $(this).val();
-        setImagePreview(file);
-    });
 
-
-	function setImagePreview(avalue) {
-	    var docObj = document.getElementById("doc");//img
-	    var imgObjPreview = document.getElementById("preview"); //div
-	    var divs = document.getElementById("localImag");
-	    if (docObj.files && docObj.files[0]) {
-	       //火狐下，直接设img属性
-	       imgObjPreview.style.display = 'block';
-	       imgObjPreview.style.width = '260px';
-	       imgObjPreview.style.height = '170px';
-	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
-	    } else {
-	       //IE下，使用滤镜
-	       docObj.select();
-	       var imgSrc = document.selection.createRange().text;
-	       var localImagId = document.getElementById("localImag");
-	       localImagId.style.width = "260px";
-	       localImagId.style.height = "170px";
-	       //图片异常的捕捉，防止用户修改后缀来伪造图片
-	       try {
-	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
-	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
-	        } catch(e) {
-	            alert("您上传的图片格式不正确，请重新选择!");
-	            return false;
-	        }
-	        imgObjPreview.style.display = 'none';
-	        document.selection.empty();
-	    }
-	   return true;
-	}
 </script>
 </body>
 </html>

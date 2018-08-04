@@ -4,21 +4,16 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-预算报价</title>
+<title>用户中心-微工程</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/> -->
-
-<!-- 引入个人中心 -->
-<link type="text/css" href="css/worker_search.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/indentification.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
-
 </script>
 
 </head>
@@ -40,9 +35,6 @@
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/ecmall.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/cart.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/main.js" charset="utf-8"></script>
-<!-- 引入的是个人中心的 -->
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/worker_quota.js"></script>
 
 <!--[if lte IE 6]>
 <script type="text/javascript" language="Javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hoverForIE6.js"></script>
@@ -60,37 +52,7 @@ body{background:url('') no-repeat center top }
 .STYLE1 {color: red}
 </style>
 <script type="text/javascript" src="http://www.wgc2013.com/themes/mall/jiaju/styles/default/js/hover.js"></script>
-<script>
-  function lxfEndtime(){
-          $(".lxftime").each(function(){
-                var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
-                var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
-                var nowtime = new Date().getTime();        //今天的日期(毫秒值)
-                var youtime = endtime-nowtime;//还有多久(毫秒值)
-                var seconds = youtime/1000;
-                var minutes = Math.floor(seconds/60);
-                var hours = Math.floor(minutes/60);
-                var days = Math.floor(hours/24);
-                var CDay= days ;
-                var CHour= hours % 24;
-                var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
-                if(endtime<=nowtime){
-                        $(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
-                        }else{
-                                if($(this).attr("lxfday")=="no"){
-                                        $(this).html("<i>剩余时间：</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span >"+CSecond+"</span>秒");          //输出没有天数的数据
-                                        }else{
-                        $(this).html("<span class='f24'>"+days+"</span><span>天</span><span  class='f24'>"+CHour+"</span><span>时</span><span  class='f24'>"+CMinute+"</span><span>分</span><span  class='f24'>"+CSecond+"</span><span>秒</span>");          //输出有天数的数据
-                                }
-                        }
-          });
-   setTimeout("lxfEndtime()",1000);
-  };
-$(function(){
-      lxfEndtime();
-   });
-</script>
+
 <script charset="utf-8" type="text/javascript" src="http://www.wgc2013.com/includes/libraries/javascript/jquery.plugins/jquery.validate.js" ></script>
 <script type="text/javascript">
   $(function (){
@@ -183,77 +145,93 @@ $(function(){
 </div>
 
 <!-- 中部主要内容 -->
- <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;position: relative;">
+ <div class="container" style="overflow: hidden;width: 1200px;margin: 10px auto;">
  <!-- 左上的导航栏 -->
- 	<iframe src="usercenter.html" frameborder="0" width="19.5%" height="860px;" style="float: left;"></iframe>
-<!-- 	<include file="usercenter.html"/> -->
+<iframe src="companycenter.html" frameborder="0" width="19.5%" height="950px;" style="float: left;"></iframe>
+
 
  	<!-- 右边的内容 -->
- 	<div class="container_right" style="width: 78.5%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 	<div class="container_right" style="width: 80%;border: 1px solid #cacaca;float: right;background-color: #f7f7f7;padding: 0 10px 10px 10px;">
+ 		<!-- 消息中心 -->
 
-		<!-- 公司信息 -->
-		<div class="budget base_ui_public" style="/*display: none;*/position: relative;">
-			<ul class="budget_ul user_public_ul">
- 				<li class="change_bg_li" style="margin-right: 10px;">企业认证</li>
+		<!-- 积分 -->
+
+		<!-- 发布招聘 -->
+
+		<!-- 发布集采 -->
+
+		<!-- 发布列表 -->
+
+ 		<!-- 创建简历 -->
+
+ 		<!-- 实名认证 -->
+		 		<!-- 实名认证 -->
+ 		<div class="user_resure base_ui_public" style="/*display: none;*/">
+ 			<ul class="user_resure_ul user_public_ul">
+ 				<li style="margin-right: 10px;background-color: #f8c67b;color: #f34c26;">实名认证</li>
  			</ul>
- 			<div class="company_info base_info_public" style="overflow: hidden;/*padding-left: 15%;*/min-height: 250px;">
- 			<!-- 预算报价 -->
- 			<div class="company_detail" style="position: relative;/*left: -16%;*//*width: 115%;*/">
-			<div style="overflow: hidden;margin-top: 10px;">
-			<!-- 基本信息 -->
-			<div class="section" style="border: none;">
-			<div class="ident">
+ 			<!-- 消息认证里面的内容 -->
+		<div class="user_resure_info base_info_public" style="overflow: hidden;padding-left: 15%;">
+		<h3 style="font-size: 12px;color: #1e2629;font-weight: bold;margin-bottom: 30px;text-align: left;">请按照提示填写本人真实资料</h3>
 				<ul>
-					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司名称</span><span class="colon">:</span><input type="text" placeholder="请填写公司全称" />
+					<li style="text-align: center;">
+						<div class="user_resure_name" style="color: #1e2629;">姓名:</div>
+						<div class="user_resure_input"><input type="text" /></div>
 					</li>
 					<li>
-						<span class="input_type" style="color: #000;font-weight: bold;">公司法人</span><span class="colon">:</span><input type="text" placeholder="请填写公司法人" />
+						<div class="user_resure_name" style="color: #1e2629;">身份证号码:</div>
+						<div class="user_resure_input"><input type="text" /></div>
+					</li>
+					<li>
+						<div class="user_resure_name" style="color: #1e2629;">手持身份证照片正面：</div>
+						<div class="user_resure_photo" style="overflow: hidden;">
+							<div class="user_resure_photo_f" style="float: left;">
+								<img src="data/files/mall/template/idcart-q.jpg" alt="身份证正面照" width="160" height="120" />
+								<button style="padding: 0;width: 85px;height: 25px;line-height: 12px;border-radius: 5px;background-color: #ff552e;color: #fff;position: relative;left: 40px;margin: 10px 0 30px 0;">上传并浏览</button>
+							</div>
+							<div class="user_resure_photo_f_example" style="float: left;padding-left: 50px;position: relative;">
+							<span style="position: absolute;width: 10px;font-weight: bold;font-size: 15px;left: 20px;">示例</span>
+								<img src="data/files/mall/template/idcart-example.jpg" alt="身份证正面照" width="220" height="120"/>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="user_resure_name" style="color: #1e2629;">身份证正面：</div>
+						<div class="user_resure_photo" style="overflow: hidden;">
+							<div class="user_resure_photo_b" style="float: left;">
+								<img src="data/files/mall/template/idcart-b.jpg" alt="身份证正面照" width="160" height="120" />
+								<button style="padding: 0;width: 85px;height: 25px;line-height: 12px;border-radius: 5px;background-color: #ff552e;color: #fff;position: relative;left: 40px;margin: 10px 0 30px 0;">上传</button>
+							</div>
+							<div class="user_resure_photo_b_example" style="float: left;padding-left: 50px;position: relative;">
+								<span style="position: absolute;width: 10px;font-weight: bold;font-size: 15px;left: 20px;">示例</span>
+								<img src="data/files/mall/template/idcart-example1.jpg" alt="身份证正面照" width="220" height="120"/>
+							</div>
+							</div>
+					</li>
+					<li>
+						<div class="user_resure_name" style="color: #1e2629;">手机:</div>
+						<div class="user_resure_input"><input type="text" /></div>
+					</li>
+					<li>
+						<div class="user_resure_name" style="color: #1e2629;">验证码:</div>
+						<div class="user_resure_input"><input type="text" />
+						</div>
+						<button class="user_resure_button" style="width: 70px;height: 20px;background-color: #ff552e;color: #fff;line-height: 10px;padding: 0;font-size: 10px;left: 15px;">发送验证码</button>
+					</li>
+					<li>
+					<div class="user_resure_agree" style="position: relative;top: 0px;left: 167px;font-size: 12px;color: #1e2629;font-weight: bold;">
+						<input type="checkbox" />我已阅读并同意<span style="color: #ff7555;">《微工程服务条款》</span>
+					</div>
 					</li>
 				</ul>
-
-				<div class="pic_box" style="margin-left: -28px;">
-					<span class="input_type" style="float: left;color: #000;font-weight: bold;">公司营业执照</span><span class="colon" style="float: left;">:</span>
-					<div style="display: inline-block;width: 260px;height:170px;border:1px solid #c1c1be;position: relative;left: -86px;">
-						<input type="file" id="doc" name="pic" style="display: none;">
-						<label for="doc" style="width: 60px;height: 60px;display: block;border: 1px solid #cfcfcf;position: relative;margin: 10px;">
-							<div style="position: absolute;border-bottom: 1px solid #cfcfcf;width:50px;top: 50%;left: 50%;margin-left: -25px;"></div>
-							<div style="position: absolute;border-right: 1px solid #cfcfcf;height: 50px;left: 50%;top: 50%;margin-top: -25px;"></div>
-						
-							<div style="width:260px;height:170px;position: absolute;top: -10px;left: -10px;" id="localImag">
-						        <img src="" id="preview" alt="">
-							</div>
-						</label>
-					</div>
+				<div>
+					<a href="#" style="display: inline-block; width: 90px;height: 25px;background-color: #ff552e;line-height: 25px;color: #fff;font-size: 14px;position: relative;left: -90px;margin-top: 50px;margin-bottom: 20px;">确认提交</a>
+				</div>
 				</div>
 
-				<ul class="tip_list" style="position: relative;left: -33px;list-style: decimal;">
-					<li><b>1.营业执照名称与公司名称保持一致</b></li>
-					<li><b>2.营业执照需要加盖公司红章</b></li>
-					<li><b>3.营业执照要清晰可见</b></li>
-					<li class="spic" style="margin-left: 0;">
-						<span style="float: left;margin-right: 8px;">*</span>
-						<input type="checkbox" style="float: left;margin-right: 2px;" />
-						<b>提交后是否愿意公开自己的资料信息在微工程网站上，来进行找活/招聘/发布集采。</b>
-					</li>
-				</ul>
-
-				<input type="button" value="确认提交" class="sub_btn" />
-			</div>
+					
 		</div>
-
-
-			</div>
-			</div>
-	
- 			</div>
- 			
-			
-		</div>
-		
-		
  		</div>
-
  		
  	</div>
 
@@ -307,43 +285,10 @@ $(function(){
 
 </div>
 <script type="text/javascript">
-	// 图片上传
-	$("input[name='pic']").live('change',function(){
-        var file = $(this).val();
-        setImagePreview(file);
-    });
-
-
-	function setImagePreview(avalue) {
-	    var docObj = document.getElementById("doc");//img
-	    var imgObjPreview = document.getElementById("preview"); //div
-	    var divs = document.getElementById("localImag");
-	    if (docObj.files && docObj.files[0]) {
-	       //火狐下，直接设img属性
-	       imgObjPreview.style.display = 'block';
-	       imgObjPreview.style.width = '260px';
-	       imgObjPreview.style.height = '170px';
-	       imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
-	    } else {
-	       //IE下，使用滤镜
-	       docObj.select();
-	       var imgSrc = document.selection.createRange().text;
-	       var localImagId = document.getElementById("localImag");
-	       localImagId.style.width = "260px";
-	       localImagId.style.height = "170px";
-	       //图片异常的捕捉，防止用户修改后缀来伪造图片
-	       try {
-	           localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
-	           localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
-	        } catch(e) {
-	            alert("您上传的图片格式不正确，请重新选择!");
-	            return false;
-	        }
-	        imgObjPreview.style.display = 'none';
-	        document.selection.empty();
-	    }
-	   return true;
-	}
+	$(".container_nav ul li").click(function(){
+		$(".container_nav ul li").removeClass("bg_li")
+		$(this).addClass("bg_li")
+	})
 </script>
 </body>
 </html>

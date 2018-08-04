@@ -1425,7 +1425,7 @@ textarea::-ms-input-placeholder{
 	width: 200px;
 }
 
-.show_center ul li:hover,.user_resume_li:hover{
+.show_center ul li:hover,.cart_center li:hover{
 	cursor: pointer;
 	background-color: #eee;
 }

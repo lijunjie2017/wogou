@@ -4,17 +4,18 @@
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
-<title>用户中心-预算报价</title>
+<title>用户中心</title>
 <meta name="description" content="微工程，微工程APP，装修、材料、家具、饰品一站式服务，让装修更简单，价格更透明！！" />
 <meta name="keywords" content="微工程，微工程，家居商城，微工程家居商城，微工程家居装修商城，办公室装修，写字楼装修，材料，装修材料，家居，办公家具，家居，家具，装修，装饰" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/api.css"/>
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.css" />
 <link rel="stylesheet" type="text/css" href="themes/mall/jiaju/css/aui.1.0.css"/>
+
+<link rel="stylesheet" href="css/address_list.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <!-- <script type="text/javascript" src="www.wgc2013.com/themes/mall/jiaju/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript">
 	jQuery.support.cors = true;
-
 </script>
 
 </head>
@@ -73,71 +74,71 @@ body{background:url('') no-repeat center top }
 <body>
 
  <!-- 左上的导航栏 -->
- 	<div class="container_nav" style="border: 2px solid #cacaca;width: 100%;height: 860px;float: left;">
+ 	<div class="container_nav" style="border: 2px solid #cacaca;width: 100%;height: 950px;float: left;">
  		<div class="user_center" style="text-align: left;">
- 			<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">企业用户中心</h3>
+ 			<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">个人用户中心</h3>
  			<ul class="user_center_ul" style="margin-top: 10px;">
- 				<li class="company_self_li">
+ 				<li class="user_self_li bg_li">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-info.png" alt="个人资料" width="20px" height="20px" /></span>
- 						公司信息
+ 						个人资料
  					</div>
  				</li>
- 				<li class="company_tel_li">
+ 				 <li class="user_tel_li" style="margin: 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/tel.jpg" alt="个人资料" width="20px" height="20px" /></span>
  						通讯录
  					</div>
  				</li>
- 				<li class="company_message_li" style="margin: 10px 0;">
+ 				<li class="user_message_li">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/prmiary-tel.png" alt="消息" width="20px" height="20px" /></span>
  						消息
  					</div>
  				</li>
- 				<li class="company_vip_li">
+ 				<li class="user_vip_li"  style="margin: 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-money.png" alt="积分" width="20px" height="20px" /></span>
  						积分
  					</div>
  				</li>
- 				<li class="company_resure_li" style="margin: 10px 0;">
+ 				<li class="user_resure_li">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/primary-safe.png" alt="认证" width="20px" height="20px" /></span>
  						认证
  					</div>
  				</li>
- 				<li class="company_workerDE_li" style="margin: 10px 0;">
+ 				<li class="user_workerDE_li" style="margin: 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_search.jpg" alt="工人定额" width="20px" height="20px" /></span>
  						工人定额
  					</div>
  				</li>
- 				<li class="company_workerCX_li" style="margin: 10px 0;">
+ 				<li class="user_workerCX_li">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker_price.jpg" alt="认证" width="20px" height="20px" /></span>
  						工人查询
  					</div>
  				</li>
- 				<li class="company_workerXJ_li" style="margin: 10px 0;">
+ 				<li class="user_workerXJ_li" style="margin: 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/worker.jpg" alt="认证" width="20px" height="20px" /></span>
  						工价询价
  					</div>
  				</li>
- 				<li class="company_zhucaiDJ_li" style="margin: 10px 0;">
+ 				<li class="user_zhucaiDJ_li">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/zhucai.jpg" alt="认证" width="20px" height="20px" /></span>
  						主材定价
  					</div>
  				</li>
- 				<li class="company_fucaiDJ_li" style="margin: 10px 0;">
+ 				<li class="user_fucaiDJ_li" style="margin: 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/fucai.jpg" alt="认证" width="20px" height="20px" /></span>
  						辅材定价
  					</div>
  				</li>
- 				<li class="company_budget_li" style="margin: 10px 0;">
+ 				<li class="user_budget_li" style="margin: 0px 0px 10px 0;">
  					<div style="height: 30px;line-height: 30px;color: #525455;margin-left: 15px;">
  						<span style="display: inline-block;position: relative;top: 5px;"><img src="data/files/mall/template/yusuan.jpg" alt="认证" width="20px" height="20px" /></span>
  						预算报价
@@ -145,103 +146,94 @@ body{background:url('') no-repeat center top }
  				</li>
  			</ul>
  		</div>
-
  		<!-- 管理工具 -->
- 		<div class="show_tool" style="text-align: left;margin-bottom: 10px;">
+ 		<div class="show_tool" style="text-align: left;margin-bottom: 50px;">
  		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">管理工具</h3>
  			<ul>
- 				<li class="company_weixiu_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">维修项目</li>
- 				<li class="company_project_li" style="text-align: center;height: 30px;line-height: 30px;">项目管理</li>
+ 				<li class="user_weixiu_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">维修项目</li>
+ 				<li class="user_project_li" style="text-align: center;height: 30px;line-height: 30px;">项目管理</li>
  				
  			</ul>
  		</div>
- 		
  		<!-- 发布中心 -->
  		<div class="show_center" style="text-align: left;">
  		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;">发布中心</h3>
  			<ul>
- 				<li class="company_employ_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">发布招聘</li>
- 				<li class="company_collection_li" style="text-align: center;height: 30px;line-height: 30px;">发布集采</li>
- 				<li class="company_list_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">发布列表</li>
+ 				<li class="user_employ_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">发布招聘</li>
+ 				<li class="user_collection_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">发布集采</li>
+ 				<li class="user_list_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;">发布列表</li>
  			</ul>
  		</div>
  		<!-- 简历中心 -->
  		<div class="cart_center">
  		<h3 style="font-size: 16px;font-weight: bold; color: #3a3c3d;height: 35px;line-height: 35px;background-image: url('data/files/mall/template/form-bg1.png');background-repeat: repeat;background-size: 100% 35px;letter-spacing: 2px;padding-left: 5px;text-align: left;">简历中心</h3>
  		<ul>
- 			<li class="company_resume_li" style="text-align: center;height: 30px;line-height: 30px;">
- 				简历1
- 			</li>
+ 			<li class="user_resume_li" style="text-align: center;height: 30px;line-height: 30px;margin: 10px 0;">创建简历</li>
+ 			<li class="user_myresume_li" style="text-align: center;height: 30px;line-height: 30px;margin-bottom: 10px;">我的简历</li>
  		</ul>
  		</div>
  	</div>
 
-
- 	<!-- 右边的内容 -->
-
-
-
-
-
-
-
+ 
 <script type="text/javascript">
 $(".container_nav ul li").click(function(){
 	$(".container_nav ul li").removeClass("bg_li")
 	$(this).addClass("bg_li")
 })
-
 //跳转连接
-$(".company_self_li").click(function(){
-	window.parent.location.href = "company_baseinfo.html"
+$(".user_self_li").click(function(){
+	window.parent.location.href = "user_baseinfo.html"
 })
-$(".company_tel_li").click(function(){
-	window.parent.location.href = "company_tel.html"
+$(".user_tel_li").click(function(){
+	window.parent.location.href = "user_tel.html"
 })
-$(".company_message_li").click(function(){
-	window.parent.location.href = "company_message.html"
+$(".user_message_li").click(function(){
+	window.parent.location.href = "user_message.html"
 })
-$(".company_vip_li").click(function(){
-	window.parent.location.href = "company_vip.html"
+$(".user_vip_li").click(function(){
+	window.parent.location.href = "user_vip.html"
 })
-$(".company_resure_li").click(function(){
-	window.parent.location.href = "company_resure.html"
+$(".user_resure_li").click(function(){
+	window.parent.location.href = "user_resure.html"
 })
-$(".company_workerDE_li").click(function(){
-	window.parent.location.href = "company_worker_dinge.html"
+$(".user_workerDE_li").click(function(){
+	window.parent.location.href = "user_worker_dinge.html"
 })
-$(".company_workerCX_li").click(function(){
-	window.parent.location.href = "company_worker_search.html"
+$(".user_workerCX_li").click(function(){
+	window.parent.location.href = "user_worker_search.html"
 })
-$(".company_workerXJ_li").click(function(){
-	window.parent.location.href = "company_worker_xunjia.html"
+$(".user_workerXJ_li").click(function(){
+	window.parent.location.href = "user_worker_xunjia.html"
 })
-$(".company_zhucaiDJ_li").click(function(){
-	window.parent.location.href = "company_zhucai_dingjia.html"
+$(".user_zhucaiDJ_li").click(function(){
+	window.parent.location.href = "user_zhucai_dingjia.html"
 })
-$(".company_fucaiDJ_li").click(function(){
-	window.parent.location.href = "fucaidinge.html"
+$(".user_fucaiDJ_li").click(function(){
+	window.parent.location.href = "user_fucai_dingjia.html"
 })
-$(".company_budget_li").click(function(){
-	window.parent.location.href = "yusuan.html"
+$(".user_budget_li").click(function(){
+	window.parent.location.href = "user_yusuan.html"
 })
-$(".company_weixiu_li").click(function(){
-	window.parent.location.href = "company_repair.html"
+$(".user_weixiu_li").click(function(){
+	window.parent.location.href = "user_repair.html"
 })
-$(".company_project_li").click(function(){
-	window.parent.location.href = "company_projecr.html"
+$(".user_project_li").click(function(){
+	window.parent.location.href = "user_project.html"
 })
-$(".company_employ_li").click(function(){
-	window.parent.location.href = "company_employ.html"
+$(".user_employ_li").click(function(){
+	window.parent.location.href = "user_employ.html"
 })
-$(".company_collection_li").click(function(){
-	window.parent.location.href = "company_collection.html"
+$(".user_collection_li").click(function(){
+	window.parent.location.href = "user_collection.html"
 })
-$(".company_list_li").click(function(){
-	window.parent.location.href = "company_showlist.html"
+$(".user_list_li").click(function(){
+	window.parent.location.href = "user_show_list.html"
 })
-$(".company_resume_li").click(function(){
-	window.parent.location.href = "resume_show.html"
+$(".user_resume_li").click(function(){
+	window.parent.location.href = "user_resume.html"
+})
+$(".user_myresume_li").click(function(){
+	window.parent.location.href = "user_myresume.html"
 })
 </script>
 </body>
